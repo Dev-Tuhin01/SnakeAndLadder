@@ -49,7 +49,7 @@ int main(int argc, char const *argv[])
             *if turn is false then it's player1's turn , else if turn is true then it's player2's turn
             *if one player gets 6 or players promoted using ladder then  thier turn repeats.
         */
-
+        repeat = 0;//*closes repeat
 
         //*this part let the player know whose turn it is
         if(!turn){
@@ -59,11 +59,11 @@ int main(int argc, char const *argv[])
             cout<<"player2's turn "<<endl;
         }
 
-        cin>>choice;
+        cin>>choice;//*initiate turn
 
-        int temp = dice();
+        int temp = dice();//*roll dice
 
-        if(temp == 6){
+        if(temp == 6){//*if 6 falls then code will repeat
             repeat = 1;
         }
 
@@ -73,7 +73,7 @@ int main(int argc, char const *argv[])
         else{
             player2Position += temp;
         }
-
+        
 
         if(!repeat){//*if repeat is false then turn changes
             turn = !turn;
