@@ -67,11 +67,14 @@ int main(int argc, char const *argv[])
     char choice;
     bool turn = 0,repeat = 0;
 
+    cout<<"Player1 current position: "<<player1Position<<endl;
+    cout<<"Player2 current position: "<<player2Position<<endl;
+
     while (1)
     {
         /*
             *if turn is false then it's player1's turn , else if turn is true then it's player2's turn
-            *if one player gets 6 or players promoted using ladder then  thier turn repeats.
+            *if one player gets 6 then  thier turn repeats.
         */
         repeat = 0;//*closes repeat
 
@@ -86,6 +89,8 @@ int main(int argc, char const *argv[])
         cin>>choice;//*initiate turn
 
         int temp = dice();//*roll dice
+
+        cout<<"Dice rolle: "<<temp<<endl;
 
         if(temp == 6){//*if 6 falls then code will repeat
             repeat = 1;
@@ -104,7 +109,14 @@ int main(int argc, char const *argv[])
 
         player1Position += positionChecker(player1Position); //* checks for ladders and snake in current position, updates it based on it 
 
-        
+
+        if(!turn){
+            cout<<"Player1 current position:"<<player1Position<<endl;
+        }
+        else{
+            cout<<"Player2 current position"<<player2Position<<endl;
+        }
+
         
         if(!repeat){//*if repeat is false then turn changes
             turn = !turn;
