@@ -35,6 +35,30 @@ int dice(){
     return roll;
 }
 
+int positionChecker(int position){
+    /*
+        *this function checks for if the player's current position got any lader or snakes;
+        * if any snake or ladder is found then the player is promoted or demoted by the 
+        * respective value. Which is returned by this function
+        * if none is found then function returned 0
+    */
+
+   for (int i = 0; i < 5; i++){ //* checking for ladder
+    if(position == ladder[i]){
+        cout<<"Yay!!! A ladder!"<<endl;
+        return ladderEnd[i];
+    }
+   }
+   
+   for(int i = 0 ; i < 7 ; i++){
+    if(position == snake[i]){ //* checking for snakes
+        cout<<"Oops!!! looks like a snake bit you"<<endl;
+        return snakeEnd[i];
+    }
+   }
+    return 0;
+}
+
 
 
 int main(int argc, char const *argv[])
@@ -66,7 +90,9 @@ int main(int argc, char const *argv[])
         if(temp == 6){//*if 6 falls then code will repeat
             repeat = 1;
         }
+        
 
+        //* updates player position
         if(!turn){
             player1Position += temp;
         }
@@ -75,6 +101,11 @@ int main(int argc, char const *argv[])
         }
         
 
+
+        player1Position += positionChecker(player1Position); //* checks for ladders and snake in current position, updates it based on it 
+
+        
+        
         if(!repeat){//*if repeat is false then turn changes
             turn = !turn;
         }
