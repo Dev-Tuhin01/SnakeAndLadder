@@ -32,8 +32,6 @@ int dice(){
 
     roll = rand() % 6 + 1;
 
-    //cout<<roll<<endl;
-
     return roll;
 }
 
@@ -42,7 +40,33 @@ int dice(){
 int main(int argc, char const *argv[])
 {
     srand(time(NULL));
-    
+    char choice;
+    bool turn = 0,repeat = 0;
+
+    while (1)
+    {
+        /*
+            *if turn is false then it's player1's turn , else if turn is true then it's player2's turn
+            *if one player gets 6 or players promoted using ladder then  thier turn repeats.
+        */
+
+
+        //*this part let the player know whose turn it is
+        if(!turn){
+            cout<<"player1's turn"<<endl;
+       }
+        else{
+            cout<<"player2's turn "<<endl;
+       }
+
+        
+
+        if(!repeat){//*if repeat is false then turn changes
+            turn = !turn;
+        }
+
+        cout<<"---------------------------------"<<endl;//*end of turn
+    }
     
     return 0;
 }
