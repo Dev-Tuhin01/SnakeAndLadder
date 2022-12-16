@@ -6,9 +6,9 @@ To install and run this game, you will need a C++ compiler and make.
 
 1. Clone this repository to your local machine:  
 ` git clone https://github.com/USERNAME/SnakeAndLadder.git `  
-Navigate to the directory where you cloned the repository:  
+2. Navigate to the directory where you cloned the repository:  
 `cd SnakeAndLadder`  
-Compile the source code using make:  
+3. Compile the source code using make:  
 `make`  
 ## Usage
 To start the game, run the executable file:  
