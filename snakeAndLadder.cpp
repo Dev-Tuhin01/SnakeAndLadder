@@ -5,9 +5,13 @@
 */
 
 #include <iostream>
-#include <CTIME>
-#include <TIME.H>
+#include <ctime>
+#include <time.H>
 #include <stdlib.H>
+#include <cstdlib>
+
+using namespace std;
+
 
 int player1Position = 1 , player2Position = 1;
 
@@ -25,9 +29,10 @@ int dice(){
     */
 
     int roll;
-    srand(time(0));
 
     roll = rand() % 6 + 1;
+
+    //cout<<roll<<endl;
 
     return roll;
 }
@@ -36,6 +41,8 @@ int dice(){
 
 int main(int argc, char const *argv[])
 {
+    srand(time(NULL));
+    
     
     return 0;
 }
