@@ -117,6 +117,15 @@ int main(int argc, char const *argv[])
             cout<<"Player2 current position: "<<player2Position<<endl;
         }
 
+        if(player1Position >= 100){
+            cout<<"Player1 Wins!!!"<<endl;
+            break;
+        }
+        else{
+            cout<<"Player2 Wins!!!"<<endl;
+            break;
+        }
+
         
         if(!repeat){//*if repeat is false then turn changes
             turn = !turn;
@@ -125,5 +134,8 @@ int main(int argc, char const *argv[])
         cout<<"---------------------------------"<<endl;//*end of turn
     }
     
+
+    
+
     return 0;
 }
