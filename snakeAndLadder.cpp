@@ -54,12 +54,26 @@ int main(int argc, char const *argv[])
         //*this part let the player know whose turn it is
         if(!turn){
             cout<<"player1's turn"<<endl;
-       }
+        }
         else{
             cout<<"player2's turn "<<endl;
-       }
+        }
 
-        
+        cin>>choice;
+
+        int temp = dice();
+
+        if(temp == 6){
+            repeat = 1;
+        }
+
+        if(!turn){
+            player1Position += temp;
+        }
+        else{
+            player2Position += temp;
+        }
+
 
         if(!repeat){//*if repeat is false then turn changes
             turn = !turn;
