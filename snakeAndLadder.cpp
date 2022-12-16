@@ -64,8 +64,13 @@ int positionChecker(int position){
 int main(int argc, char const *argv[])
 {
     srand(time(NULL));
-    char choice;
+    char choice, throwAway;
     bool turn = 0,repeat = 0;
+
+
+    cout<<"***Snake And Ladder***"<<endl;//* Game begining screen
+    cout<<"Press any key to continue..."<<endl;// * start game
+    cin>>throwAway;
 
     cout<<"Player1 current position: "<<player1Position<<endl;
     cout<<"Player2 current position: "<<player2Position<<endl;
@@ -86,6 +91,8 @@ int main(int argc, char const *argv[])
             cout<<"player2's turn "<<endl;
         }
 
+
+        cout<<"Press any key to roll Dice..."<<endl;
         cin>>choice;//*initiate turn
 
         int temp = dice();//*roll dice
@@ -117,13 +124,18 @@ int main(int argc, char const *argv[])
             cout<<"Player2 current position: "<<player2Position<<endl;
         }
 
+        //* If any player crosses 100 he wins
+
         if(player1Position >= 100){
             cout<<"Player1 Wins!!!"<<endl;
             break;
         }
-        else{
+        else if(player2Position >= 100){
             cout<<"Player2 Wins!!!"<<endl;
             break;
+        }
+        else{
+            //!blank space
         }
 
         
@@ -131,11 +143,11 @@ int main(int argc, char const *argv[])
             turn = !turn;
         }
 
-        cout<<"---------------------------------"<<endl;//*end of turn
+        cout<<"---------------------------------"<<endl;//*End of turn
     }
     
 
-    
+    cout<<"***Game Over***"<<endl; //* End of Game
 
     return 0;
 }
