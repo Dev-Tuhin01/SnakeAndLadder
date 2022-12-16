@@ -90,7 +90,7 @@ int main(int argc, char const *argv[])
 
         int temp = dice();//*roll dice
 
-        cout<<"Dice rolle: "<<temp<<endl;
+        cout<<"Dice rolled: "<<temp<<endl;
 
         if(temp == 6){//*if 6 falls then code will repeat
             repeat = 1;
@@ -111,10 +111,10 @@ int main(int argc, char const *argv[])
 
 
         if(!turn){
-            cout<<"Player1 current position:"<<player1Position<<endl;
+            cout<<"Player1 current position: "<<player1Position<<endl;
         }
         else{
-            cout<<"Player2 current position"<<player2Position<<endl;
+            cout<<"Player2 current position: "<<player2Position<<endl;
         }
 
         
